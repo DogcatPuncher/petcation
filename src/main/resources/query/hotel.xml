@@ -85,4 +85,7 @@
       	where hotel_no = #{hotel_no}
 	</select>
 	
+	<select id="getPriceByHotelNo" parameterType="int" resultType="int">
+		SELECT hotel_price FROM hotel WHERE hotel_no = #{hotelNo}
+	</select>
 </mapper>
