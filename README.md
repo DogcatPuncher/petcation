@@ -1,10 +1,26 @@
 ## 🐶 펫케이션
 > 반려동물 동반 숙박 예약 플랫폼
+<<<<<<< HEAD
 > - 개발 기간: 2022.07 ~ 2022.08 / 2026.04 결제 시스템 개선
 > - 개발 인원: 5인 (팀장 · 예약/결제 담당)
 >   
 > 기존 팀 프로젝트에서 담당했던 예약/결제 기능을 
 > 토스페이먼츠 API로 전면 개선하고 결제 보안 및 예외 처리를 강화했습니다.
+
+<br>
+=======
+> - 개발 기간: 2022.07 ~ 2022.08
+> - 개발 인원: 5인
+
+<br>
+
+- ## 🐱 팀원  
+- [경민](https://github.com/miniminichichi)
+- [상아](https://github.com/SangAhhh)
+- [지유](https://github.com/zyooou)
+- [진리](https://github.com/Lee-jinri)
+- [현승](https://github.com/kolk23)
+>>>>>>> upstream/main
 
 <br>
 
@@ -13,6 +29,7 @@
 - Frontend: JavaScript, HTML5, CSS3
 - Database/Server: Oracle, Tomcat
 - 외부 API: 토스페이먼츠
+<<<<<<< HEAD
 
 <br>
 
@@ -130,3 +147,5 @@
 <br>
 
 
+=======
+>>>>>>> upstream/main

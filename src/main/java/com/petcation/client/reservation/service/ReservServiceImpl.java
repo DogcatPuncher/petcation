@@ -69,8 +69,8 @@ public class ReservServiceImpl implements ReservService {
     }
     
     @Override
-    public void cancelReservation(String orderId) {
-        reservDao.cancelReservation(orderId);
+    public void updateReservStatus(String orderId, String status) {
+        reservDao.updateReservStatus(orderId, status);
     }
     
     @Override
