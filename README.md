@@ -29,6 +29,11 @@
 
 <img src="docs/images/cancelPayment.gif" width="70%">
 
+### 결제 실패
+- 결제 승인 실패 시 롤백 및 에러 메시지 안내
+- 웹훅 중복 수신 방어로 2중 안전장치 구현
+
+<img src="docs/images/paymentFail.gif" width="70%">
 <br>
 
 ## 프로세스 흐름
@@ -55,8 +60,22 @@
 - reserv UPDATE (status: DONE)
 - success 페이지 반환
 
-**5. 실패 시**
-- reserv 페이지로 redirect + errorMessage
+### 결제 실패 프로세스
+
+**토스 결제 취소 API 호출**
+- payments UPDATE (status: CANCELED)
+- reserv UPDATE (status: CANCELED)
+
+**데이터 처리 실패**
+-  DB 갱신 오류 발생 시 상태 변경
+- payments UPDATE (status: FAIL)
+- reserv UPDATE (status: FAILED)
+
+**웹훅 처리**
+- 네트워크 오류 대응을 위한 웹훅 재전송
+
+**사용자 안내**
+- 에러 메시지와 함께 예약 페이지로 리다이렉트
 
 <br>
 
@@ -91,11 +110,22 @@
 
 <br>
 
-### 2️⃣ 취소 정책 및 예외 처리
+### 2️⃣ 결제 실패
+**배경:** 
+
+**해결:** 
+
+**성과:** 
+
+:**개선 사항:** 결제 실패 및 환불 누락에 대한 모니터링 및 스케줄링 배치 처리 필요
+
+### 3️⃣ 취소 정책 및 예외 처리
 **배경:** 취소 요청 시 발생할 수 있는 권한 오용, 중복 요청 등 다양한 예외 상황을 사전에 방어할 필요성 인지
 - 체크인 7일 전 취소 기한 검증을 서버/클라이언트 양쪽에서 이중 처리
 - 본인 예약 여부, 이미 취소된 예약 재취소 방지 등 엣지 케이스 처리
 - 취소 버튼 disabled 처리로 중복 요청 방지
+
+### 
 
 <br>
 
